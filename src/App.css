@@ -1,0 +1,32 @@
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.squares li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: calc(10px + var(--i) * 10px);
+  height: calc(10px + var(--i) * 10px);
+  background: rgba(103, 58, 183, 0.1);
+  animation: float calc(30s / var(--i)) linear infinite;
+  bottom: calc(-100px - var(--i) * 10px);
+  left: calc(var(--j) * 10%);
+  border-radius: 8px;
+}
